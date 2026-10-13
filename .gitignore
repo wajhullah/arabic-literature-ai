@@ -1,0 +1,186 @@
+# ============================================================
+# Arabic Literature AI — Git ignore rules
+# Python / Windows environment
+# ============================================================
+
+# ------------------------------------------------------------
+# Python byte-compiled / optimized / cached files
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ------------------------------------------------------------
+# Python distribution / packaging
+# ------------------------------------------------------------
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ------------------------------------------------------------
+# Virtual environments
+# ------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------
+# Testing / coverage
+# ------------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# ------------------------------------------------------------
+# Type checkers / linters
+# ------------------------------------------------------------
+.mypy_cache/
+.dmypy.json
+.ruff_cache/
+.pytype/
+.pyre/
+
+# ------------------------------------------------------------
+# Jupyter notebooks
+# ------------------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb
+profile_default/
+ipython_config.py
+
+# ------------------------------------------------------------
+# Local vector database (disk-backed Qdrant store)
+# ------------------------------------------------------------
+# Contains embedded vectors + payloads. Rebuild it with:
+#   python scripts/rag_search.py --recreate
+/vector_db/
+
+# ------------------------------------------------------------
+# Source PDFs — do NOT commit copyrighted textbooks
+# ------------------------------------------------------------
+# Place private copies under data/raw_pdfs/ locally.
+/data/raw_pdfs/
+*.pdf
+
+# ------------------------------------------------------------
+# Model artifacts — never push weights to a public repo
+# ------------------------------------------------------------
+# LoRA adapters, merged checkpoints, and training outputs.
+/lora_tutor_adapter/
+/checkpoints/
+/outputs/
+/runs/
+/weights/
+/models/
+*.safetensors
+*.bin
+*.gguf
+*.ggml
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+*.hdf5
+*.msgpack
+
+# Hugging Face / transformers caches
+.cache/
+.huggingface/
+*.lock.hf
+
+# ------------------------------------------------------------
+# Datasets / derived data (optional — uncomment to ignore)
+# ------------------------------------------------------------
+# Keep dataset/dataset.json public (it's the curated 80-example set),
+# or uncomment the next line to exclude it too:
+# /dataset/dataset.json
+/data/processed_text/
+
+# ------------------------------------------------------------
+# Temporary credentials & secrets — NEVER commit
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.env
+secrets.*
+credentials*
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+service-account*.json
+config.local.*
+# RunPod secret placeholders resolve at pod boot; keep the raw names out too
+*hf-token*
+
+# ------------------------------------------------------------
+# Logs, caches and temporary files
+# ------------------------------------------------------------
+*.log
+log/
+logs/
+tmp/
+temp/
+.tmp/
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+.Trash-*
+
+# ------------------------------------------------------------
+# OS / editor / IDE
+# ------------------------------------------------------------
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+# MS Office lock files
+~$*
+
+# Editors / IDEs
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ------------------------------------------------------------
+# RunPod / cloud tooling
+# ------------------------------------------------------------
+.runpod/
+.runtime/

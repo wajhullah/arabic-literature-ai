@@ -1,0 +1,39 @@
+# ============================================================
+# Arabic Literature AI — dependencies
+# ============================================================
+
+# --- Ingestion: extract_text.py ---
+pdfplumber
+easyocr                # optional: only needed for scanned/image-based pages
+PyMuPDF                # optional: renders pages for easyocr when using --ocr
+
+# --- Embeddings: rag_search.py ---
+fastembed
+onnxruntime            # FastEmbed's default runtime (platform-specific build)
+
+# --- Vector store (pick one; both listed for flexibility) ---
+qdrant-client
+chromadb
+
+# --- Dataset distillation: distill_data.py ---
+openai                 # or use the provider's native SDK / httpx
+httpx
+tqdm
+
+# --- Fine-tuning: Unsloth QLoRA ---
+# NOTE: Unsloth is installed from source per the official docs, not via this file.
+torch
+transformers
+accelerate
+peft
+bitsandbytes
+trl
+datasets
+
+# --- UI: app.py ---
+streamlit
+
+# --- Misc ---
+python-dotenv
+numpy
+pandas
